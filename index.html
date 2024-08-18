@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raksha Bandhan Greeting Card</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff8e1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card {
+            background-color: #ffecd2;
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            border: 2px solid #ff6f61;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card h1 {
+            font-size: 24px;
+            color: #d6336c;
+            margin-bottom: 20px;
+        }
+
+        .card p {
+            font-size: 18px;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .rakhi {
+            font-size: 50px;
+            margin: 20px 0;
+        }
+
+        .name {
+            color: #ff6f61;
+            font-weight: bold;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* Sprinkle effect styles */
+        .sprinkle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .sprinkle div {
+            position: absolute;
+            border-radius: 50%;
+            background-color: transparent;
+            pointer-events: none;
+            animation: sprinkle 6s infinite;
+        }
+
+        @keyframes sprinkle {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0);
+                top: 100%;
+                left: 100%;
+            }
+        }
+
+        /* Colorful sprinkles */
+        .sprinkle div:nth-child(1) { width: 10px; height: 10px; background-color: #ff6f61; top: 10%; left: 10%; animation-duration: 4s; }
+        .sprinkle div:nth-child(2) { width: 15px; height: 15px; background-color: #d6336c; top: 30%; left: 20%; animation-duration: 5s; }
+        .sprinkle div:nth-child(3) { width: 20px; height: 20px; background-color: #6f42c1; top: 50%; left: 30%; animation-duration: 6s; }
+        .sprinkle div:nth-child(4) { width: 12px; height: 12px; background-color: #20c997; top: 70%; left: 40%; animation-duration: 4.5s; }
+        .sprinkle div:nth-child(5) { width: 18px; height: 18px; background-color: #fd7e14; top: 20%; left: 60%; animation-duration: 5.5s; }
+        .sprinkle div:nth-child(6) { width: 25px; height: 25px; background-color: #ffc107; top: 40%; left: 80%; animation-duration: 6.5s; }
+
+        @media (max-width: 600px) {
+            .card {
+                width: 95%;
+                padding: 15px;
+            }
+
+            .card h1 {
+                font-size: 20px;
+            }
+
+            .card p {
+                font-size: 16px;
+            }
+
+            .rakhi {
+                font-size: 40px;
+            }
+
+            .footer {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Happy Raksha Bandhan!</h1>
+        <div class="rakhi">🎀</div>
+        <p>Dear <span class="name" id="username"></span>,</p>
+        <p>Wishing you all the joy and happiness on this special day!</p>
+        <div class="footer">With love, from your sibling</div>
+    </div>
+
+    <div class="sprinkle">
+        <!-- Add more divs for sprinkle effects -->
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let userName = prompt("Please enter your name:");
+            if (userName) {
+                document.getElementById('username').textContent = userName;
+            } else {
+                document.getElementById('username').textContent = "Brother/Sister";
+            }
+        });
+    </script>
+</body>
+</html>
